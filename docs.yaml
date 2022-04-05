@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  title: govly
+  title: Govly API
   version: '2.0'
   description: Documentation for the Govly API
   contact:
@@ -65,8 +65,19 @@ paths:
                         workspaceId:
                           type: string
                           minLength: 1
+                  meta:
+                    type: object
+                    properties:
+                      cursor:
+                        type: number
+                      count:
+                        type: number
+                    required:
+                      - cursor
+                      - count
                 required:
                   - follows
+                  - meta
                 x-examples:
                   example-1:
                     follows:
@@ -84,9 +95,427 @@ paths:
                         oppId: '2349'
                         state: disinterested
                         workspaceId: '4'
+                      - email: bot@govly.com
+                        followerId: '2'
+                        id: '103'
+                        modifiedAt: '2022-04-02T20:40:15Z'
+                        oppId: '2349'
+                        state: unfollowed
+                        workspaceId: '93'
+                      - email: ellie@govly.com
+                        followerId: '6'
+                        id: '105'
+                        modifiedAt: '2022-04-02T20:32:28Z'
+                        oppId: '2349'
+                        state: unfollowed
+                        workspaceId: '93'
+                      - email: jon@govly.com
+                        followerId: '3'
+                        id: '106'
+                        modifiedAt: '2022-04-02T20:47:37Z'
+                        oppId: '2349'
+                        state: following
+                        workspaceId: '93'
+                      - email: mike@govly.com
+                        followerId: '4'
+                        id: '107'
+                        modifiedAt: '2022-04-02T20:41:45Z'
+                        oppId: '2349'
+                        state: unfollowed
+                        workspaceId: '93'
+                      - email: nick@govly.com
+                        followerId: '1'
+                        id: '112'
+                        modifiedAt: '2022-04-02T20:38:57Z'
+                        oppId: '2349'
+                        state: following
+                        workspaceId: '93'
+                      - email: david@govly.com
+                        followerId: '9'
+                        id: '113'
+                        modifiedAt: '2022-04-02T20:45:52Z'
+                        oppId: '2349'
+                        state: following
+                        workspaceId: '93'
+                      - email: david@govly.com
+                        followerId: '9'
+                        id: '115'
+                        modifiedAt: '2022-04-02T20:57:31Z'
+                        oppId: '2349'
+                        state: considered
+                        workspaceId: '123'
+                      - email: david@govly.com
+                        followerId: '9'
+                        id: '118'
+                        modifiedAt: '2022-04-02T20:58:05Z'
+                        oppId: '2349'
+                        state: considered
+                        workspaceId: '124'
+                    meta:
+                      cursor: 118
+                      count: 10
         '401':
           description: Unauthorized
       description: Returns list of Workspace Follows for your organization
+      parameters:
+        - schema:
+            type: number
+            default: 10
+          in: query
+          name: limit
+          allowEmptyValue: true
+          description: Limit for pagination
+        - schema:
+            type: number
+          in: query
+          name: cursor
+          description: Last ID from previous query. Response will query records with IDs greater than the cursor.
+          allowEmptyValue: true
+        - schema:
+            type: string
+          in: query
+          name: modified_after
+          description: ISO8601 date string. Only return results modified after this time
+  /opp_workspaces:
+    parameters: []
+    get:
+      summary: ''
+      operationId: get-opp_workspaces
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  workspaces:
+                    type: array
+                    uniqueItems: true
+                    minItems: 1
+                    items:
+                      required:
+                        - createdByOrganization
+                        - id
+                        - link
+                        - name
+                        - updatedAt
+                        - workflowStage
+                      properties:
+                        archivedAt: {}
+                        createdByOrganization:
+                          type: string
+                          minLength: 1
+                        id:
+                          type: string
+                          minLength: 1
+                        link:
+                          type: string
+                          minLength: 1
+                        name:
+                          type: string
+                          minLength: 1
+                        updatedAt:
+                          type: string
+                          minLength: 1
+                        workflowStage:
+                          type: string
+                          minLength: 1
+                  meta:
+                    type: object
+                    properties:
+                      cursor:
+                        type: number
+                      count:
+                        type: number
+                    required:
+                      - cursor
+                      - count
+                required:
+                  - workspaces
+                  - meta
+                x-examples:
+                  example-1:
+                    workspaces:
+                      - archivedAt: null
+                        createdByOrganization: Govly
+                        id: '4'
+                        link: 'https://app.govly.com/opps/2349/workspaces/4'
+                        name: Govly
+                        updatedAt: '2022-03-28T18:15:50Z'
+                        workflowStage: qualifying
+                      - archivedAt: null
+                        createdByOrganization: Govly
+                        id: '40'
+                        link: 'https://app.govly.com/opps/2347/workspaces/40'
+                        name: Govly
+                        updatedAt: '2022-03-29T23:29:46Z'
+                        workflowStage: qualifying
+                      - archivedAt: null
+                        createdByOrganization: Govly
+                        id: '44'
+                        link: 'https://app.govly.com/opps/1851/workspaces/44'
+                        name: Govly
+                        updatedAt: '2022-03-30T03:11:33Z'
+                        workflowStage: qualifying
+                      - archivedAt: null
+                        createdByOrganization: Govly
+                        id: '67'
+                        link: 'https://app.govly.com/opps/2345/workspaces/67'
+                        name: Govly
+                        updatedAt: '2022-03-30T21:56:35Z'
+                        workflowStage: qualifying
+                      - archivedAt: null
+                        createdByOrganization: Govly
+                        id: '71'
+                        link: 'https://app.govly.com/opps/87/workspaces/71'
+                        name: Govly
+                        updatedAt: '2022-03-30T21:57:27Z'
+                        workflowStage: qualifying
+                    meta:
+                      cursor: 71
+                      count: 5
+        '401':
+          description: Unauthorized
+      description: Returns list of Workspaces for your organization
+      parameters:
+        - schema:
+            type: number
+            default: 10
+          in: query
+          name: limit
+          allowEmptyValue: true
+          description: Limit for pagination
+        - schema:
+            type: number
+          in: query
+          name: cursor
+          description: Last ID from previous query. Response will query records with IDs greater than the cursor.
+          allowEmptyValue: true
+        - schema:
+            type: string
+          in: query
+          name: modified_after
+          description: ISO8601 date string. Only return results modified after this time
+  /organization_opps:
+    parameters: []
+    get:
+      summary: ''
+      operationId: get-organization-opps
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                x-examples:
+                  example-1:
+                    opps:
+                      - awardedAt: null
+                        cancelledAt: null
+                        contractVehicle: SEWP V
+                        customer: Corps of Engineers
+                        description: |-
+                          USACE has a requirement for X1 Search Client - 1 Year Term. We would like a market estimate.
+                              X1S-Term1YR1-199
+                          Reseller Requirements :
+                              Established Authorized Resellers Only - where applicable
+
+
+                           Allow Q&amp;A:  Y
+
+
+                           EPEAT Selected Level Only: Bronze or Silver or Gold
+
+
+                           TAA Compliant Products Only: N
+
+
+                           Authorized Reseller Only: Y
+
+
+                           Allow Partial Quotes: N
+
+
+                           Allow Quotes With Partial Delivery: N
+
+
+                           Used Or Refurbished Products Are Acceptable: N
+
+
+                           Allow Multiple Quotes For Alternative Solutions: N
+
+
+                           Selected Brand Name Providers Only: Not applicable
+
+
+                           MOD Remarks :
+
+                          Additional Remarks :
+                              Give vendors time to do market research and provide quotes.
+                        iteration: 1
+                        modifiedAt: '2022-03-11T21:36:39Z'
+                        oppId: '87'
+                        postedAt: '2022-03-04T15:07:48Z'
+                        respondBy: '2022-03-17T03:59:00Z'
+                        setAside: Full and Open
+                        solicitationNumber: '224181'
+                        title: X1 Search Client
+                      - awardedAt: null
+                        cancelledAt: null
+                        contractVehicle: SEWP V
+                        customer: 'VETERANS AFFAIRS, DEPARTMENT OF'
+                        description: |-
+                          The Department of Veterans Affairs (VA) Office of Electronic Health Record Modernization (OEHRM) requires JSA Palo Alto Support for Palo Alto devices.
+                          Reseller Requirements :
+
+
+                           Allow Q&amp;A:  Y
+
+
+                           EPEAT Selected Level Only: Bronze or Silver or Gold
+
+
+                           TAA Compliant Products Only: N
+
+
+                           Authorized Reseller Only: Y
+
+
+                           Allow Partial Quotes: N
+
+
+                           Allow Quotes With Partial Delivery: N
+
+
+                           Used Or Refurbished Products Are Acceptable: N
+
+
+                           Allow Multiple Quotes For Alternative Solutions: N
+
+
+                           Selected Brand Name Providers Only: Not applicable
+
+
+                           MOD Remarks :
+                              The RFI was modified to include the authorization codes and serial numbers
+                          Additional Remarks :
+                              Vendor Request
+                        iteration: 2
+                        modifiedAt: '2022-03-24T13:54:52Z'
+                        oppId: '2345'
+                        postedAt: '2022-03-11T21:45:26Z'
+                        respondBy: '2022-03-25T03:59:00Z'
+                        setAside: SDVOSB
+                        solicitationNumber: '225035'
+                        title: Palo Alto Support for Palo Alto devices
+                      - awardedAt: null
+                        cancelledAt: null
+                        contractVehicle: SEWP V
+                        customer: National Oceanic and Atmospheric Administration
+                        description: |-
+                          NMFS enterprise wide bulk order purchase for Polycom brand devices to be utilized with Google Voice. Attached is the statement of need with quantities. Also attached is the shipping address for the orders.
+                          Reseller Requirements :
+                              Established Authorized Resellers Only - where applicable
+
+
+                           Allow Q&amp;A:  Y
+
+
+                           EPEAT Selected Level Only: Bronze or Silver or Gold
+
+
+                           TAA Compliant Products Only: N
+
+
+                           Authorized Reseller Only: Y
+
+
+                           Allow Partial Quotes: N
+
+
+                           Allow Quotes With Partial Delivery: N
+
+
+                           Used Or Refurbished Products Are Acceptable: N
+
+
+                           Allow Multiple Quotes For Alternative Solutions: N
+
+
+                           Selected Brand Name Providers Only: Polycom
+
+
+                           MOD Remarks :
+                              SON attachment did not attach during the first post
+                        iteration: 2
+                        modifiedAt: '2022-03-14T14:05:29Z'
+                        oppId: '2349'
+                        postedAt: '2022-03-11T21:47:03Z'
+                        respondBy: '2022-03-17T21:00:00Z'
+                        setAside: SB150
+                        solicitationNumber: '225046'
+                        title: NMFS Polycom Order
+                    meta:
+                      cursor: null
+                      count: 3
+                properties:
+                  opps:
+                    type: array
+                    uniqueItems: true
+                    minItems: 1
+                    items:
+                      type: object
+                      properties:
+                        awardedAt:
+                          type: string
+                        cancelledAt:
+                          type: string
+                        contractVehicle:
+                          type: string
+                          minLength: 1
+                        customer:
+                          type: string
+                          minLength: 1
+                        description:
+                          type: string
+                          minLength: 1
+                        iteration:
+                          type: number
+                        modifiedAt:
+                          type: string
+                          minLength: 1
+                        oppId:
+                          type: string
+                          minLength: 1
+                        postedAt:
+                          type: string
+                          minLength: 1
+                        respondBy:
+                          type: string
+                          minLength: 1
+                        setAside:
+                          type: string
+                          minLength: 1
+                        solicitationNumber:
+                          type: string
+                          minLength: 1
+                        title:
+                          type: string
+                          minLength: 1
+                  meta:
+                    type: object
+                    properties:
+                      cursor:
+                        type: number
+                      count:
+                        type: number
+        '401':
+          description: Unauthorized
+      description: Returns list of Opportunities your orgnization follows.
       parameters:
         - schema:
             type: number
