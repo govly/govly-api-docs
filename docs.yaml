@@ -8,6 +8,8 @@ info:
     email: support@govly.com
     name: Govly
   termsOfService: 'https://storage.googleapis.com/govly-static/govly_tos.pdf'
+  x-logo:
+    url: 'https://storage.googleapis.com/govly-static/govly-logos/icon.svg'
 servers:
   - url: 'https://app.govly.com/api/v2'
     description: Production

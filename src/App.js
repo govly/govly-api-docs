@@ -6,7 +6,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <API apiDescriptionUrl="../docs.yaml" />
+      <API apiDescriptionUrl="https://raw.githubusercontent.com/govly/govly-api-docs/main/docs.yaml" />
     </div>
   );
 }
