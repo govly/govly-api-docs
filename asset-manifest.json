@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/api-docs/static/css/main.826a671e.chunk.css",
-    "main.js": "/api-docs/static/js/main.8d3bdeff.chunk.js",
-    "main.js.map": "/api-docs/static/js/main.8d3bdeff.chunk.js.map",
-    "runtime-main.js": "/api-docs/static/js/runtime-main.37852242.js",
-    "runtime-main.js.map": "/api-docs/static/js/runtime-main.37852242.js.map",
-    "static/css/2.7192c502.chunk.css": "/api-docs/static/css/2.7192c502.chunk.css",
-    "static/js/2.2a341aa4.chunk.js": "/api-docs/static/js/2.2a341aa4.chunk.js",
-    "static/js/2.2a341aa4.chunk.js.map": "/api-docs/static/js/2.2a341aa4.chunk.js.map",
-    "static/js/3.769a3234.chunk.js": "/api-docs/static/js/3.769a3234.chunk.js",
-    "static/js/3.769a3234.chunk.js.map": "/api-docs/static/js/3.769a3234.chunk.js.map",
-    "index.html": "/api-docs/index.html",
-    "static/css/2.7192c502.chunk.css.map": "/api-docs/static/css/2.7192c502.chunk.css.map",
-    "static/css/main.826a671e.chunk.css.map": "/api-docs/static/css/main.826a671e.chunk.css.map",
-    "static/js/2.2a341aa4.chunk.js.LICENSE.txt": "/api-docs/static/js/2.2a341aa4.chunk.js.LICENSE.txt"
+    "main.css": "/govly-api-docs/static/css/main.826a671e.chunk.css",
+    "main.js": "/govly-api-docs/static/js/main.8d3bdeff.chunk.js",
+    "main.js.map": "/govly-api-docs/static/js/main.8d3bdeff.chunk.js.map",
+    "runtime-main.js": "/govly-api-docs/static/js/runtime-main.6a231bda.js",
+    "runtime-main.js.map": "/govly-api-docs/static/js/runtime-main.6a231bda.js.map",
+    "static/css/2.7192c502.chunk.css": "/govly-api-docs/static/css/2.7192c502.chunk.css",
+    "static/js/2.31449cf4.chunk.js": "/govly-api-docs/static/js/2.31449cf4.chunk.js",
+    "static/js/2.31449cf4.chunk.js.map": "/govly-api-docs/static/js/2.31449cf4.chunk.js.map",
+    "static/js/3.769a3234.chunk.js": "/govly-api-docs/static/js/3.769a3234.chunk.js",
+    "static/js/3.769a3234.chunk.js.map": "/govly-api-docs/static/js/3.769a3234.chunk.js.map",
+    "index.html": "/govly-api-docs/index.html",
+    "static/css/2.7192c502.chunk.css.map": "/govly-api-docs/static/css/2.7192c502.chunk.css.map",
+    "static/css/main.826a671e.chunk.css.map": "/govly-api-docs/static/css/main.826a671e.chunk.css.map",
+    "static/js/2.31449cf4.chunk.js.LICENSE.txt": "/govly-api-docs/static/js/2.31449cf4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.37852242.js",
+    "static/js/runtime-main.6a231bda.js",
     "static/css/2.7192c502.chunk.css",
-    "static/js/2.2a341aa4.chunk.js",
+    "static/js/2.31449cf4.chunk.js",
     "static/css/main.826a671e.chunk.css",
     "static/js/main.8d3bdeff.chunk.js"
   ]
