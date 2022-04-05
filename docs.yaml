@@ -19,7 +19,7 @@ paths:
   /opp_workspace_follows:
     parameters: []
     get:
-      summary: ''
+      summary: List OppWorkspaceFollows
       operationId: get-opp_workspace_follows
       responses:
         '200':
@@ -179,7 +179,7 @@ paths:
   /opp_workspaces:
     parameters: []
     get:
-      summary: ''
+      summary: List OppWorkspaces
       operationId: get-opp_workspaces
       responses:
         '200':
@@ -301,7 +301,7 @@ paths:
   /organization_opps:
     parameters: []
     get:
-      summary: ''
+      summary: GET OrganizationOpps
       operationId: get-organization-opps
       responses:
         '200':
@@ -535,6 +535,27 @@ paths:
           in: query
           name: modified_after
           description: ISO8601 date string. Only return results modified after this time
+    post:
+      summary: Create or update an OrganizationOpp
+      operationId: post-organization_opps
+      responses:
+        '200':
+          description: OK
+      description: Create or update organization level metadata related to a particular opp.
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: opp_id
+          description: Govly Opp ID
+          required: true
+        - schema:
+            type: object
+            properties:
+              salesforce_opportinity_link:
+                type: string
+          in: query
+          name: context
 components:
   schemas: {}
   securitySchemes:
