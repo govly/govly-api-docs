@@ -536,42 +536,7 @@ paths:
           name: modified_after
           description: ISO8601 date string. Only return results modified after this time
 components:
-  schemas:
-    OppWorkspaceFollow:
-      description: ''
-      type: object
-      x-examples:
-        example-1:
-          email: nick@govly.com
-          followerId: '1'
-          id: '53'
-          modifiedAt: '2022-03-31T06:01:21Z'
-          oppId: '2349'
-          state: disinterested
-          workspaceId: '4'
-      properties:
-        email:
-          type: string
-          minLength: 1
-        followerId:
-          type: string
-          minLength: 1
-        id:
-          type: string
-          minLength: 1
-        modifiedAt:
-          type: string
-          minLength: 1
-        oppId:
-          type: string
-          minLength: 1
-        state:
-          type: string
-          minLength: 1
-        workspaceId:
-          type: string
-          minLength: 1
-      title: OppWorkspaceFollow
+  schemas: {}
   securitySchemes:
     X-API-KEY:
       name: X-API-KEY
