@@ -6,7 +6,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <API apiDescriptionUrl="https://raw.githubusercontent.com/stoplightio/Public-APIs/master/reference/zoom/openapi.yaml" />
+      <API apiDescriptionUrl="../docs.yaml" />
     </div>
   );
 }

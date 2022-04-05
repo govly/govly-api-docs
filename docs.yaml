@@ -1,0 +1,148 @@
+openapi: 3.1.0
+info:
+  title: govly
+  version: '2.0'
+  description: Documentation for the Govly API
+  contact:
+    url: 'https://www.govly.com'
+    email: support@govly.com
+    name: Govly
+  termsOfService: 'https://storage.googleapis.com/govly-static/govly_tos.pdf'
+servers:
+  - url: 'https://app.govly.com/api/v2'
+    description: Production
+  - url: 'http://localhost:3000/api/v2'
+    description: Development
+paths:
+  /opp_workspace_follows:
+    parameters: []
+    get:
+      summary: ''
+      operationId: get-opp_workspace_follows
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  follows:
+                    type: array
+                    uniqueItems: true
+                    minItems: 1
+                    items:
+                      required:
+                        - email
+                        - followerId
+                        - id
+                        - modifiedAt
+                        - oppId
+                        - state
+                        - workspaceId
+                      properties:
+                        email:
+                          type: string
+                          minLength: 1
+                        followerId:
+                          type: string
+                          minLength: 1
+                        id:
+                          type: string
+                          minLength: 1
+                        modifiedAt:
+                          type: string
+                          minLength: 1
+                        oppId:
+                          type: string
+                          minLength: 1
+                        state:
+                          type: string
+                          minLength: 1
+                        workspaceId:
+                          type: string
+                          minLength: 1
+                required:
+                  - follows
+                x-examples:
+                  example-1:
+                    follows:
+                      - email: david@govly.com
+                        followerId: '9'
+                        id: '8'
+                        modifiedAt: '2022-03-28T20:46:50Z'
+                        oppId: '2349'
+                        state: following
+                        workspaceId: '4'
+                      - email: nick@govly.com
+                        followerId: '1'
+                        id: '53'
+                        modifiedAt: '2022-03-31T06:01:21Z'
+                        oppId: '2349'
+                        state: disinterested
+                        workspaceId: '4'
+        '401':
+          description: Unauthorized
+      description: Returns list of Workspace Follows for your organization
+      parameters:
+        - schema:
+            type: number
+            default: 10
+          in: query
+          name: limit
+          allowEmptyValue: true
+          description: Limit for pagination
+        - schema:
+            type: number
+          in: query
+          name: cursor
+          description: Last ID from previous query. Response will query records with IDs greater than the cursor.
+          allowEmptyValue: true
+        - schema:
+            type: string
+          in: query
+          name: modified_after
+          description: ISO8601 date string. Only return results modified after this time
+components:
+  schemas:
+    OppWorkspaceFollow:
+      description: ''
+      type: object
+      x-examples:
+        example-1:
+          email: nick@govly.com
+          followerId: '1'
+          id: '53'
+          modifiedAt: '2022-03-31T06:01:21Z'
+          oppId: '2349'
+          state: disinterested
+          workspaceId: '4'
+      properties:
+        email:
+          type: string
+          minLength: 1
+        followerId:
+          type: string
+          minLength: 1
+        id:
+          type: string
+          minLength: 1
+        modifiedAt:
+          type: string
+          minLength: 1
+        oppId:
+          type: string
+          minLength: 1
+        state:
+          type: string
+          minLength: 1
+        workspaceId:
+          type: string
+          minLength: 1
+      title: OppWorkspaceFollow
+  securitySchemes:
+    X-API-KEY:
+      name: X-API-KEY
+      type: apiKey
+      in: header
