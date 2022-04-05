@@ -2,7 +2,7 @@
   "name": "govly-api-docs",
   "homepage": "https://govly.github.io/govly-api-docs",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@stoplight/elements": "^7.5.13",
     "@testing-library/jest-dom": "^5.16.4",
