@@ -9,7 +9,7 @@ info:
     name: Govly
   termsOfService: 'https://storage.googleapis.com/govly-static/govly_tos.pdf'
   x-logo:
-    url: 'https://storage.googleapis.com/govly-static/govly-logos/icon-48.png'
+    url: 'https://public-govly-files-production.s3.us-west-2.amazonaws.com/govly-icon.png'
 servers:
   - url: 'https://app.govly.com/api/v2'
     description: Production
