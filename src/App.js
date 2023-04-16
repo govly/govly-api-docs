@@ -7,6 +7,7 @@ function App() {
   return (
     <div className="App">
       <API
+        basePath="/"
         apiDescriptionUrl="https://raw.githubusercontent.com/govly/govly-api-docs/main/docs.yaml"
       />
     </div>

@@ -1,6 +1,6 @@
 {
   "name": "govly-api-docs",
-  "homepage": "https://govly.github.io/govly-api-docs",
+  "homepage": "./",
   "version": "0.1.0",
   "private": false,
   "dependencies": {
