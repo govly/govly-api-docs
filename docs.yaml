@@ -7,7 +7,7 @@ info:
     url: 'https://www.govly.com'
     email: support@govly.com
     name: Govly
-  termsOfService: 'https://storage.googleapis.com/govly-static/govly_tos.pdf'
+  termsOfService: 'https://www.govly.com/terms'
   x-logo:
     url: 'https://public-govly-files-production.s3.us-west-2.amazonaws.com/govly-icon.png'
 servers:
