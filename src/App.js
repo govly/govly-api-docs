@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <API
         basePath="/"
-        apiDescriptionUrl="https://raw.githubusercontent.com/govly/govly-api-docs/main/docs.yaml"
+        apiDescriptionUrl={process.env.PUBLIC_URL + '/docs.yaml'}
       />
     </div>
   );
