@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "private": false,
   "dependencies": {
-    "@stoplight/elements": "^7.5.13",
+    "@stoplight/elements": "^7.7.16",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^14.0.4",
